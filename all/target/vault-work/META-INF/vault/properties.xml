@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Ugams - All</comment>
+<entry key="cloudManagerTarget">all</entry>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="created">2021-11-29T14:34:51.520Z</entry>
+<entry key="groupId">com.Ugams</entry>
+<entry key="name">ugams.all</entry>
+<entry key="description">All content package for Ugams</entry>
+<entry key="artifactId">ugams.all</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">container</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">com.Ugams</entry>
+</properties>

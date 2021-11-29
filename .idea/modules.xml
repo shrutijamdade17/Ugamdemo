@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ugams.iml" filepath="$PROJECT_DIR$/.idea/ugams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/all/ugams.all.iml" filepath="$PROJECT_DIR$/all/ugams.all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/ugams.core.iml" filepath="$PROJECT_DIR$/core/ugams.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/it.tests/ugams.it.tests.iml" filepath="$PROJECT_DIR$/it.tests/ugams.it.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui.apps/ugams.ui.apps.iml" filepath="$PROJECT_DIR$/ui.apps/ugams.ui.apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui.apps.structure/ugams.ui.apps.structure.iml" filepath="$PROJECT_DIR$/ui.apps.structure/ugams.ui.apps.structure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui.config/ugams.ui.config.iml" filepath="$PROJECT_DIR$/ui.config/ugams.ui.config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui.content/ugams.ui.content.iml" filepath="$PROJECT_DIR$/ui.content/ugams.ui.content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui.tests/ugams.ui.tests.iml" filepath="$PROJECT_DIR$/ui.tests/ugams.ui.tests.iml" />
+    </modules>
+  </component>
+</project>

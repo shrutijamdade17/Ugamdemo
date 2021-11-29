@@ -1,0 +1,9 @@
+com\Ugams\core\models\impl\TimelineImplTest.class
+com\Ugams\core\listeners\SimpleResourceListenerTest.class
+com\Ugams\core\models\impl\PriceImplTest.class
+com\Ugams\core\filters\LoggingFilterTest.class
+com\Ugams\core\models\impl\additionservletTest.class
+com\Ugams\core\servlets\SimpleServletTest.class
+com\Ugams\core\models\impl\BannerAreaImplTest.class
+com\Ugams\core\schedulers\SimpleScheduledTaskTest.class
+com\Ugams\core\models\HelloWorldModelTest.class
