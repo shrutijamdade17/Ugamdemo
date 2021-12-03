@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="OSGI-INF/l10n/com.Ugams.core.config.ugamOsgiConfig">
+  <OCD id="com.Ugams.core.config.ugamOsgiConfig" name="Ugams - OSGi Configuration" description=" OSGi Configuration with run modes.">
+    <AD id="serviceID" type="Integer" name="Service ID" description="Enter service id."/>
+    <AD id="serviceName" type="String" name="Service Name" description="Enter service name." default="AEM\ Geeks\ Service"/>
+    <AD id="isService" type="Boolean" name="Is Service" description="Select Is Service." default="false"/>
+    <AD id="serviceCountry" type="String" cardinality="2147483647" name="Service Countries" description="Add Service Countries." default="us,in"/>
+    <AD id="serviceRunMode" type="String" name="Run Modes" description="Add Run Modes." default="author">
+      <Option label="Author" value="author"/>
+      <Option label="Publish" value="publish"/>
+    </AD>
+  </OCD>
+  <Designate pid="com.Ugams.core.services.impl.OSGIConfigImpl">
+    <Object ocdref="com.Ugams.core.config.ugamOsgiConfig"/>
+  </Designate>
+</metatype:MetaData>

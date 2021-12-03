@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.Ugams.core.models.impl.PriceImplTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.803 s - in com.Ugams.core.models.impl.PriceImplTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2 s - in com.Ugams.core.models.impl.PriceImplTest
