@@ -17,17 +17,7 @@
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ugams/components/container"
-                layout="responsiveGrid">
-                <title
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ugams/components/title"
-                    editable="{Boolean}true"/>
-                <container
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ugams/components/container"
-                    editable="{Boolean}true"
-                    layout="responsiveGrid"/>
-            </container>
+                editable="{Boolean}true"/>
             <experiencefragment-footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ugams/components/experiencefragment"
