@@ -4,7 +4,7 @@
 <comment>Ugams - UI config</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2021-11-29T14:34:50.864Z</entry>
+<entry key="created">2021-12-07T17:13:46.676Z</entry>
 <entry key="groupId">com.Ugams</entry>
 <entry key="name">ugams.ui.config</entry>
 <entry key="description">UI config package for Ugams</entry>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.Ugams.core.services.impl.OSGIConfigImpl" immediate="true" activate="activate">
+  <property name="serviceName" type="String" value="AEM Geeks Service"/>
+  <property name="isService" type="Boolean" value="false"/>
+  <property name="serviceCountry" type="String">us
+in</property>
+  <property name="serviceRunMode" type="String" value="author"/>
+  <service>
+    <provide interface="com.Ugams.core.services.OSGIConfig"/>
+  </service>
+  <implementation class="com.Ugams.core.services.impl.OSGIConfigImpl"/>
+</scr:component>
