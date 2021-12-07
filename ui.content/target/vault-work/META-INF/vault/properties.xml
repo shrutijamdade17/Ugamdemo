@@ -5,7 +5,7 @@
 <entry key="allowIndexDefinitions">false</entry>
 <entry key="acHandling">merge</entry>
 <entry key="dependencies-locations">com.Ugams:ugams.ui.apps:1.0.0-SNAPSHOT=maven:com.Ugams:ugams.ui.apps:1.0.0-SNAPSHOT:zip</entry>
-<entry key="created">2021-11-29T14:34:49.787Z</entry>
+<entry key="created">2021-12-07T17:13:45.802Z</entry>
 <entry key="groupId">com.Ugams</entry>
 <entry key="description">UI content package for Ugams</entry>
 <entry key="version">1.0.0-SNAPSHOT</entry>

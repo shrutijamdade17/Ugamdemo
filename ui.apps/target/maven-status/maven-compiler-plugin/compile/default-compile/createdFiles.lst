@@ -16,6 +16,7 @@ org\apache\sling\scripting\sightly\apps\ugams\components\content\blog__002d__tea
 org\apache\sling\scripting\sightly\apps\ugams\components\content\demo\demo_html.class
 org\apache\sling\scripting\sightly\apps\ugams\components\page\customfooterlibs_html.class
 org\apache\sling\scripting\sightly\apps\ugams\components\helloworld\helloworld_html.class
+org\apache\sling\scripting\sightly\apps\ugams\components\content\OsgiConfigComp\OsgiConfigComp_html.class
 org\apache\sling\scripting\sightly\apps\ugams\components\content\banner__002d__area\banner__002d__area_html.class
 org\apache\sling\scripting\sightly\apps\ugams\components\xfpage\content_html.class
 org\apache\sling\scripting\sightly\apps\ugams\components\xfpage\customheaderlibs_html.class

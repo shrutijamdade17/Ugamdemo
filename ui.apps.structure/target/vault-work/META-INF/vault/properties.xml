@@ -4,7 +4,7 @@
 <comment>Ugams - Repository Structure Package</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2021-11-29T14:34:25.359Z</entry>
+<entry key="created">2021-12-07T17:13:26.785Z</entry>
 <entry key="groupId">com.Ugams</entry>
 <entry key="name">ugams.ui.apps.structure</entry>
 <entry key="description">Empty package that defines the structure of the Adobe Experience Manager repository the Code packages in this project deploy into.
