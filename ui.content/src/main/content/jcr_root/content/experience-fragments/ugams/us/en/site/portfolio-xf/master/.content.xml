@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-12-10T11:41:27.753+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/ugams/settings/wcm/templates/ugam-xf"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Portfolio xf"
+        sling:resourceType="ugams/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ugams/components/container"
+            layout="responsiveGrid">
+            <title
+                cq:masterBuildingBlock="{Boolean}true"
+                jcr:created="{Date}2021-12-09T22:34:15.351+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-12-09T22:36:05.086+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Portfolio Teaser bb"
+                sling:resourceType="cq/experience-fragments/editor/components/buildingblock">
+                <title525657273624600
+                    jcr:lastModified="{Date}2021-12-09T22:34:33.250+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Portfolio Teaser"
+                    sling:resourceType="ugams/components/title"
+                    type="h1"/>
+                <item525657275400000
+                    jcr:created="{Date}2021-12-09T22:34:38.460+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-12-09T22:34:51.116+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ugams/components/content/portfolio-teaser"
+                    img="/content/dam/ugams/p1.jpg"
+                    portfolioText="2D Vinyl Design"
+                    portfolioTitle="Vector">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="6"/>
+                    </cq:responsive>
+                </item525657275400000>
+                <item525657280307900
+                    jcr:created="{Date}2021-12-09T22:34:57.116+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-12-09T22:35:05.066+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ugams/components/content/portfolio-teaser"
+                    img="/content/dam/ugams/p2.jpg"
+                    portfolioText="2D Vinyl Design"
+                    portfolioTitle="Vector">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="6"/>
+                    </cq:responsive>
+                </item525657280307900>
+            </title>
+        </root>
+    </jcr:content>
+</jcr:root>
