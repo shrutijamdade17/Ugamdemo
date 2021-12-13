@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-12-10T16:08:47.388+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/ugams/settings/wcm/templates/ugam-xf"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Blog Teaser xf"
+        sling:resourceType="ugams/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ugams/components/container"
+            layout="responsiveGrid">
+            <title
+                cq:masterBuildingBlock="{Boolean}true"
+                jcr:created="{Date}2021-12-09T22:23:40.972+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-12-09T22:28:09.756+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Blog Teaser bb"
+                sling:resourceType="cq/experience-fragments/editor/components/buildingblock">
+                <title525181943921500
+                    jcr:lastModified="{Date}2021-12-09T22:23:56.345+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Blog Teaser"
+                    sling:resourceType="ugams/components/title"
+                    type="h1">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="2"
+                            width="10"/>
+                    </cq:responsive>
+                </title525181943921500>
+                <item525181945177800
+                    jcr:created="{Date}2021-12-09T22:24:03.215+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-12-10T16:08:47.322+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ugams/components/content/blog-teaser"
+                    blogText="Dream interpretation has many forms; it can be done be done for the sake of fun, hobby or can be taken up as a serious career."
+                    blogTitle="BREAK THROUGH SELF DOUBT AND FEAR"
+                    img="/content/dam/ugams/b2.jpg">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="2"
+                            width="7"/>
+                    </cq:responsive>
+                </item525181945177800>
+                <item525181947054000
+                    jcr:created="{Date}2021-12-09T22:26:03.952+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-12-09T22:26:51.207+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ugams/components/content/blog-teaser"
+                    blogText="You may be a skillful, effective employer but if you don’t trust your personnel and the opposite, then the chances of improving."
+                    blogTitle="PORTABLE FASHION FOR YOUNG WOMEN"
+                    img="/content/dam/ugams/b1.jpg">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="2"
+                            width="7"/>
+                    </cq:responsive>
+                </item525181947054000>
+            </title>
+        </root>
+    </jcr:content>
+</jcr:root>
