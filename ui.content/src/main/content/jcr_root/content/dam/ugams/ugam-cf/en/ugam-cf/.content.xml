@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="b24cc37b-d965-4bb4-be15-d89ae0366d4f">
+    <jcr:content
+        cq:name="ugam-cf"
+        cq:parentPath="/content/dam/ugams/ugam-cf/en"
+        jcr:description=""
+        jcr:lastModified="{Date}2021-12-13T16:01:59.341+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Ugam-cf"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-12-13T16:01:59.341+05:30">
+        <data
+            cq:model="/conf/ugams/settings/dam/cfm/models/content-fragment-ugam"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                cities="Nashik"
+                cities_x0040_LastModified="{Date}2021-12-13T16:01:59.302+05:30"
+                textname="Welcome"
+                textname_x0040_LastModified="{Date}2021-12-13T16:01:59.301+05:30"/>
+            <ugan-cf-vari1
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                cities="Pune"
+                cities_x0040_LastModified="{Date}2021-12-13T11:28:20.704+05:30"
+                textname="Welcome In"
+                textname_x0040_LastModified="{Date}2021-12-13T11:28:20.703+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <ugan-cf-vari1
+                    jcr:description=""
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="ugan-cf-vari1"
+                    name="ugan-cf-vari1">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[textname:e26c7e53-cb72-43c3-ae76-de04f5c74c67,cities:e26c7e53-cb72-43c3-ae76-de04f5c74c67]"/>
+                </ugan-cf-vari1>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
