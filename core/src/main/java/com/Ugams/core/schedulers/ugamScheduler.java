@@ -61,7 +61,7 @@ public class ugamScheduler implements Runnable {
         try {
 
             try (ResourceResolver resourceResolver = getServiceResourceResolver()) {
-                Resource resource = resourceResolver.getResource("/content/ugams/us/en/demo/jcr:content/root/container/title_text");
+                Resource resource = resourceResolver.getResource("/content/ugams/us/en/demo/jcr:content/root/container/currenttime");
                 Node node = resource.adaptTo(Node.class);
                 node.setProperty("time", DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
                 resourceResolver.commit();
