@@ -12,7 +12,6 @@ import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 @Component(immediate = true, service = ugamScheduler.class)
 @Designate(ocd = SchedulerConfig.class)
 public class ugamScheduler implements Runnable {
@@ -26,6 +25,9 @@ public class ugamScheduler implements Runnable {
 
     @Reference
     private Scheduler scheduler;
+
+    @Reference
+    CurrentTime currentTime;
 
     @Reference
     private ResourceResolverFactory resolverFactory;
@@ -60,9 +62,10 @@ public class ugamScheduler implements Runnable {
     @Override
     public void run() {
         LOG.info("\n ====> RUN METHOD  ");
+
         currentDate.UpdateDate(path);
 
+      }
     }
-
-    }
+}
 
