@@ -24,6 +24,11 @@ public class UgamCustomPreprocessor implements Preprocessor {
     private static final Logger log = LoggerFactory.getLogger(UgamCustomPreprocessor.class);
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
+    String path = "/content/ugams/us/en/demo/jcr:content/root/container/currenttime";
+
+    @Reference
+    CurrentTime currentTime;
+
     @Override
     public void preprocess(final ReplicationAction replicationAction,
                            final ReplicationOptions replicationOptions) throws ReplicationException {
@@ -39,12 +44,12 @@ public class UgamCustomPreprocessor implements Preprocessor {
                 log.debug("===============inside try====================");
                 serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
                 Session session = serviceResourceResolver.adaptTo(Session.class);
-                Resource resource = serviceResourceResolver.getResource("/content/ugams/us/en/demo/jcr:content/root/container/currenttime");
+                Resource resource = serviceResourceResolver.getResource(path);
                 Node node = resource.adaptTo(Node.class);
                 if(node.getProperty("time") != DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())))
                 {
                     log.debug("===============inside if====================");
-                    node.setProperty("time" , DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
+                    currentTime.UpdateTime();
                     session.save();
                     session.logout();
                 }else {
