@@ -1,5 +1,6 @@
 package com.Ugams.core.listeners;
 
+import com.Ugams.core.services.CurrentDate;
 import com.Ugams.core.utils.ResolverUtil;
 import com.day.cq.commons.date.DateUtil;
 import com.day.cq.commons.date.InvalidDateException;
@@ -24,10 +25,10 @@ public class UgamCustomPreprocessor implements Preprocessor {
     private static final Logger log = LoggerFactory.getLogger(UgamCustomPreprocessor.class);
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
-    String path = "/content/ugams/us/en/demo/jcr:content/root/container/currenttime";
+    String path1 = "/content/ugams/us/en/demo/jcr:content/root/container/currenttime";
 
     @Reference
-    CurrentTime currentTime;
+    CurrentDate currentTime;
 
     @Override
     public void preprocess(final ReplicationAction replicationAction,
@@ -44,12 +45,12 @@ public class UgamCustomPreprocessor implements Preprocessor {
                 log.debug("===============inside try====================");
                 serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
                 Session session = serviceResourceResolver.adaptTo(Session.class);
-                Resource resource = serviceResourceResolver.getResource(path);
+                Resource resource = serviceResourceResolver.getResource(path1);
                 Node node = resource.adaptTo(Node.class);
                 if(node.getProperty("time") != DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())))
                 {
                     log.debug("===============inside if====================");
-                    currentTime.UpdateTime();
+                    currentTime.UpdateDate(path1);
                     session.save();
                     session.logout();
                 }else {
