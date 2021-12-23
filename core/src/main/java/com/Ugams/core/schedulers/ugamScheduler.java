@@ -1,6 +1,7 @@
 package com.Ugams.core.schedulers;
 
 import com.Ugams.core.config.SchedulerConfig;
+import com.Ugams.core.services.CurrentTime;
 import com.day.cq.commons.date.DateUtil;
 import com.day.cq.commons.date.InvalidDateException;
 import org.apache.sling.api.resource.*;
@@ -10,7 +11,6 @@ import org.osgi.service.component.annotations.*;
 import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import java.util.*;
@@ -26,6 +26,9 @@ public class ugamScheduler implements Runnable {
 
     @Reference
     private Scheduler scheduler;
+
+    @Reference
+    CurrentTime currentTime;
 
     @Reference
     private ResourceResolverFactory resolverFactory;
@@ -58,24 +61,7 @@ public class ugamScheduler implements Runnable {
     @Override
     public void run() {
         LOG.info("\n ====> RUN METHOD  ");
-        try {
-
-            try (ResourceResolver resourceResolver = getServiceResourceResolver()) {
-                Resource resource = resourceResolver.getResource("/content/ugams/us/en/demo/jcr:content/root/container/currenttime");
-                Node node = resource.adaptTo(Node.class);
-                node.setProperty("time", DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
-                resourceResolver.commit();
-            }
-        } catch (LoginException | PersistenceException | RepositoryException | InvalidDateException e) {
-            LOG.error("Exception occurred {}", e);
-        }
-
-    }
-
-    private ResourceResolver getServiceResourceResolver() throws LoginException {
-        Map<String, Object> params = new HashMap<>();
-        params.put(ResourceResolverFactory.SUBSERVICE, "myEventService");
-        return resolverFactory.getServiceResourceResolver(params);
+        currentTime.UpdateTime();
     }
     }
 
