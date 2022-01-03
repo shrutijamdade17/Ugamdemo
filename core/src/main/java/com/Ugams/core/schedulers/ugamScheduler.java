@@ -2,8 +2,6 @@ package com.Ugams.core.schedulers;
 
 import com.Ugams.core.config.SchedulerConfig;
 import com.Ugams.core.services.CurrentDate;
-import com.day.cq.commons.date.DateUtil;
-import com.day.cq.commons.date.InvalidDateException;
 import org.apache.sling.api.resource.*;
 import org.apache.sling.commons.scheduler.ScheduleOptions;
 import org.apache.sling.commons.scheduler.Scheduler;
@@ -15,8 +13,7 @@ import org.slf4j.LoggerFactory;
 @Component(immediate = true, service = ugamScheduler.class)
 @Designate(ocd = SchedulerConfig.class)
 public class ugamScheduler implements Runnable {
-
-    private static final Logger LOG = LoggerFactory.getLogger(ugamScheduler.class);
+    //private static final Logger LOG = LoggerFactory.getLogger(ugamScheduler.class);
 
     private int schedulerId;
 
@@ -25,9 +22,6 @@ public class ugamScheduler implements Runnable {
 
     @Reference
     private Scheduler scheduler;
-
-    @Reference
-    CurrentTime currentTime;
 
     @Reference
     private ResourceResolverFactory resolverFactory;
@@ -56,16 +50,15 @@ public class ugamScheduler implements Runnable {
         scheduleOptions.name(String.valueOf(schedulerId));
         scheduleOptions.canRunConcurrently(true);
         scheduler.schedule(this, scheduleOptions);
-
-        LOG.info("\n ---------Scheduler added----------");
+        //LOG.info("\n ---------Scheduler added----------");
     }
     @Override
     public void run() {
-        LOG.info("\n ====> RUN METHOD  ");
+       // LOG.info("\n ====> RUN METHOD  ");
 
         currentDate.UpdateDate(path);
 
       }
     }
-}
+
 

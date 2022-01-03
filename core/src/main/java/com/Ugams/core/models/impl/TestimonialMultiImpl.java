@@ -1,12 +1,9 @@
 package com.Ugams.core.models.impl;
-
-
 import com.Ugams.core.models.TestimonialMulti;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,10 +11,12 @@ import java.util.Map;
 
 @Model(adaptables = Resource.class,
         adapters = TestimonialMulti.class,
+        resourceType = TestimonialMultiImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
-
 public class TestimonialMultiImpl implements TestimonialMulti{
+
+    final protected static String RESOURCE_TYPE="ugams/components/content/testimonial-multi";
 
     @ChildResource
     Resource testimonialmultifield;

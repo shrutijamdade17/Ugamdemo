@@ -9,8 +9,11 @@ import javax.inject.Inject;
 
 @Model(adaptables = Resource.class,
         adapters = Footer.class,
+        resourceType = FooterImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class FooterImpl implements Footer{
+
+    final protected static String RESOURCE_TYPE="ugams/components/content/footer";
 
     @Inject
     String title1;

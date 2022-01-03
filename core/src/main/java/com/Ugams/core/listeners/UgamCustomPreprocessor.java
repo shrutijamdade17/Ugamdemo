@@ -1,7 +1,7 @@
 package com.Ugams.core.listeners;
 
 import com.Ugams.core.services.CurrentDate;
-import com.Ugams.core.utils.ResolverUtil;
+import com.Ugams.core.utils.ResolverUtils;
 import com.day.cq.commons.date.DateUtil;
 import com.day.cq.commons.date.InvalidDateException;
 import com.day.cq.replication.*;
@@ -21,8 +21,7 @@ import java.util.Calendar;
 
 @Component(immediate=true)
 public class UgamCustomPreprocessor implements Preprocessor {
-
-    private static final Logger log = LoggerFactory.getLogger(UgamCustomPreprocessor.class);
+    //private static final Logger log = LoggerFactory.getLogger(UgamCustomPreprocessor.class);
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
     String path1 = "/content/ugams/us/en/demo/jcr:content/root/container/currenttime";
@@ -39,32 +38,32 @@ public class UgamCustomPreprocessor implements Preprocessor {
         }
         String path = replicationAction.getPath();
         if(path.equals("/content/ugams/us/en/demo")){
-            log.debug("path equal");
+            //log.debug("path equal");
             ResourceResolver serviceResourceResolver = null;
             try {
-                log.debug("===============inside try====================");
-                serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
+                //log.debug("===============inside try====================");
+                serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
                 Session session = serviceResourceResolver.adaptTo(Session.class);
                 Resource resource = serviceResourceResolver.getResource(path1);
                 Node node = resource.adaptTo(Node.class);
                 if(node.getProperty("time") != DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())))
                 {
-                    log.debug("===============inside if====================");
+                    //log.debug("===============inside if====================");
                     currentTime.UpdateDate(path1);
                     session.save();
                     session.logout();
                 }else {
-                    log.debug("===============inside else====================");
+                    //log.debug("===============inside else====================");
                 }
             } catch (LoginException | RepositoryException | InvalidDateException e) {
                 e.printStackTrace();
             }
         }
         try {
-            log.debug(path);
+            //log.debug(path);
         }
         catch (Exception e) {
-            log.debug(e.getMessage());
+            //log.debug(e.getMessage());
         }
     }
 }

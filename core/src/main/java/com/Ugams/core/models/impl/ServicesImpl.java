@@ -10,9 +10,11 @@ import javax.inject.Inject;
 
 @Model(adaptables = Resource.class,
         adapters = Services.class,
+        resourceType = ServicesImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ServicesImpl implements Services {
 
+    final protected static String RESOURCE_TYPE="ugams/components/content/services";
 
     @Inject
     String title;

@@ -17,12 +17,11 @@ import javax.jcr.Session;
         property = {"process.label" + " = Ugams Workflow Step"}
 )
 public class CustomWorkflow implements WorkflowProcess{
-
-    private static final Logger log = LoggerFactory.getLogger(CustomWorkflow.class);
+    //private static final Logger log = LoggerFactory.getLogger(CustomWorkflow.class);
     @Override
     public void execute(WorkItem workItem, WorkflowSession workflowSession, MetaDataMap metaDataMap) throws WorkflowException {
 
-        log.info("Executing the workflow");
+       // log.info("Executing the workflow");
         try {
             WorkflowData workflowData = workItem.getWorkflowData();
             if (workflowData.getPayloadType().equals("JCR_PATH")) {
@@ -40,7 +39,7 @@ public class CustomWorkflow implements WorkflowProcess{
                 }
             }
         }catch (Exception e){
-            log.info("\n ERROR",e.getMessage());
+           // log.info("\n ERROR",e.getMessage());
         }
     }
 

@@ -18,12 +18,12 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = Caconfig.class,
-        resourceType = {CaconfigImpl.RESOURCE_TYPE},
+        //resourceType = {CaconfigImpl.RESOURCE_TYPE},
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class CaconfigImpl implements Caconfig {
 
-    protected static final String RESOURCE_TYPE = "";
+    //protected static final String RESOURCE_TYPE = "";
     private static final Logger LOG = LoggerFactory.getLogger(CaconfigImpl.class);
     @SlingObject
     ResourceResolver resourceResolver;
