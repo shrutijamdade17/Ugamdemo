@@ -21,23 +21,22 @@ import java.util.Map;
         adapters = Timeline.class,
         resourceType = TimelineImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-@Exporter(name = "jackson", extensions ="json",selector = "timeline",
+/*@Exporter(name = "jackson", extensions ="json",selector = "timeline",
         options = {
                 @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
         })
-@JsonRootName("Timeline")
+@JsonRootName("Timeline")*/
 public class TimelineImpl implements Timeline{
 
     final protected static String RESOURCE_TYPE="ugams/components/content/timeline";
 
-
     @ChildResource
     Resource timeline;
 
-    @JsonProperty(value = "Component Name")
-    public String ComponentName(){
+    //@JsonProperty(value = "Component Name")
+   /* public String ComponentName(){
         return "Timeline";
-    }
+    }*/
 
     @Override
     public List<Map<String, String>> getTimelineDetails() {

@@ -1,0 +1,12 @@
+{
+  "homeabout": {
+  "jcr:primaryType": "nt:unstructured",
+  "buttonTitle": "VIEW FULL DETAILS",
+  "img": "/content/dam/ugams/about-img.png",
+  "desc": "Here, I focus on a range of items and features",
+  "path": "/content/ugams/us/en/about",
+  "title": "ABOUT ME",
+  "heading": "PERSONAL DETAILS",
+  "sling:resourceType": "ugams/components/content/home-about"
+}
+}

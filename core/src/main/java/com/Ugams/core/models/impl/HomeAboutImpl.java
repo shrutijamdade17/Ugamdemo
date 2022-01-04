@@ -9,20 +9,20 @@ import org.apache.sling.models.annotations.*;
 import javax.inject.Inject;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Exporters({
+/*@Exporters({
         @Exporter(name = "jackson",extensions = "json",selector = "homeabout",
                 options = {
                         @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true")
                 }),
         @Exporter(name = "homeabout",extensions = "xml",selector = "homeabout")
-})
+})*/
 @Model(adaptables = Resource.class,
         adapters = HomeAbout.class,
         resourceType = HomeAboutImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
-@JsonRootName("Home-About")
-@XmlRootElement(name = "Home-About")
+/*@JsonRootName("Home-About")
+@XmlRootElement(name = "Home-About")*/
 public class HomeAboutImpl implements HomeAbout{
 
     final protected static String RESOURCE_TYPE="ugams/components/content/home-about";
@@ -55,7 +55,7 @@ public class HomeAboutImpl implements HomeAbout{
         return heading;
     }
 
-    @JsonProperty(value = "Description")
+    //@JsonProperty(value = "Description")
     @Override
     public String getHomeAboutDescription() {
         return desc;
@@ -66,7 +66,7 @@ public class HomeAboutImpl implements HomeAbout{
         return buttonTitle;
     }
 
-    @JsonProperty(value = "Image Path")
+    //@JsonProperty(value = "Image Path")
     @Override
     public String getImg() {
         return img;
@@ -77,8 +77,8 @@ public class HomeAboutImpl implements HomeAbout{
         return path;
     }
 
-    @JsonProperty(value = "Component Name")
-    public String ComponentName(){
+    //@JsonProperty(value = "Component Name")
+    /*public String ComponentName(){
         return "Home About";
-    }
+    }*/
 }

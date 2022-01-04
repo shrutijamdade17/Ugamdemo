@@ -1,13 +1,13 @@
 package com.Ugams.core.services.impl;
 
-import com.Ugams.core.config.ugamOsgiConfig;
+import com.Ugams.core.config.UgamOsgiConfig;
 import com.Ugams.core.services.OSGIConfig;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.Designate;
 
 @Component(service = OSGIConfig.class,immediate = true)
-@Designate(ocd = ugamOsgiConfig.class )
+@Designate(ocd = UgamOsgiConfig.class )
 public class OSGIConfigImpl implements OSGIConfig {
     private String serviceName;
     private int serviceID;
@@ -16,7 +16,7 @@ public class OSGIConfigImpl implements OSGIConfig {
     private String runModes;
 
     @Activate
-    protected void activate(ugamOsgiConfig ugamOSGIConfig){
+    public void activate(UgamOsgiConfig ugamOSGIConfig){
         serviceName=ugamOSGIConfig.serviceName();
         serviceID=ugamOSGIConfig.serviceID();
         isService=ugamOSGIConfig.isService();

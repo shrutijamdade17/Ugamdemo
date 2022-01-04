@@ -1,7 +1,7 @@
 package com.Ugams.core.services.impl;
 
 import com.Ugams.core.services.CurrentDate;
-import com.Ugams.core.utils.ResolverUtil;
+import com.Ugams.core.utils.ResolverUtils;
 import com.day.cq.commons.date.DateUtil;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -18,7 +18,7 @@ import java.util.Calendar;
 @Component(service = CurrentDate.class,immediate = true)
 public class CurrentDateImpl implements  CurrentDate {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CurrentDateImpl.class);
+    //private static final Logger LOG = LoggerFactory.getLogger(CurrentDateImpl.class);
     @Reference
     ResourceResolverFactory resourceResolverFactory;
 
@@ -27,7 +27,7 @@ public class CurrentDateImpl implements  CurrentDate {
     @Override
     public void UpdateDate(String path) {
         try {
-            ResourceResolver serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
+            ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
             Session session = serviceResourceResolver.adaptTo(Session.class);
             Resource resource = serviceResourceResolver.getResource(path);
             Node node = resource.adaptTo(Node.class);
@@ -35,7 +35,7 @@ public class CurrentDateImpl implements  CurrentDate {
             session.save();
             session.logout();
         } catch (Exception e) {
-            LOG.info(e.getMessage());
+           // LOG.info(e.getMessage());
         }
     }
 }

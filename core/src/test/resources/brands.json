@@ -1,0 +1,13 @@
+{
+  "brands": {
+    "imgPath":["/content/dam/ugams/l1.png"]
+  },
+  "nobrands": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:created": "Fri Jun 18 2021 01:18:52 GMT+0530",
+    "jcr:lastModified": "Fri Jun 18 2021 13:34:28 GMT+0530",
+    "sling:resourceType": "ugam/components/content/brands"
+  }
+}

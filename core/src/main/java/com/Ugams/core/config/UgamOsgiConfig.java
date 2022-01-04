@@ -8,7 +8,7 @@ import org.osgi.service.metatype.annotations.Option;
 @ObjectClassDefinition(name="Ugams - OSGi Configuration",
         description = " OSGi Configuration with run modes.")
 
-public @interface ugamOsgiConfig {
+public @interface UgamOsgiConfig {
     @AttributeDefinition(
             name = "Service ID",
             description = "Enter service id.",

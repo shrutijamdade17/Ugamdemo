@@ -1,12 +1,10 @@
 package com.Ugams.core.models.impl;
 
-
 import com.Ugams.core.models.TestimonialMulti;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
