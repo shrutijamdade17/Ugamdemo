@@ -12,10 +12,12 @@ import java.util.Map;
 
 @Model(adaptables = Resource.class,
         adapters = TestimonialMulti.class,
+        resourceType = TestimonialMultiImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
-
 public class TestimonialMultiImpl implements TestimonialMulti{
+
+    final protected static String RESOURCE_TYPE="ugams/components/content/testimonial-multi";
 
     @ChildResource
     Resource testimonialmultifield;

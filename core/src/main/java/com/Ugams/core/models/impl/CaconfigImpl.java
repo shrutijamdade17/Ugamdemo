@@ -17,8 +17,6 @@ import javax.annotation.PostConstruct;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class CaconfigImpl implements Caconfig {
-
-    //private static final Logger LOG = LoggerFactory.getLogger(CaconfigImpl.class);
     @SlingObject
     ResourceResolver resourceResolver;
     @ScriptVariable

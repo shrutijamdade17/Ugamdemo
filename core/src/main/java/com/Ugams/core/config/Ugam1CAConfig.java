@@ -14,7 +14,7 @@ public @interface Ugam1CAConfig {
     String siteLocale() default "en";
     @Property(label = "siteAdmin",
             description = "Site Admin")
-    String siteAdmin() default "ugam1";
+    String siteAdmin() default "ugam";
     @Property(label = "siteSection",
             description = "Site Section")
     String siteSection() default "aem";

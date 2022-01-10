@@ -14,6 +14,7 @@ import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import javax.inject.Inject;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -23,11 +24,15 @@ import java.util.*;
         adapters = UserNames.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class UserNamesImpl implements UserNames {
+
+    @SlingObject
+    ResourceResolver resolver;
     @Inject
     QueryBuilder queryBuilder;
     @OSGiService
     ResourceResolverFactory resourceResolverFactory;
     String user = " ";
+  
     @Override
     public String getUserNames() throws RepositoryException {
         Map<String, String> userMap = new HashMap<>();
@@ -48,7 +53,7 @@ public class UserNamesImpl implements UserNames {
                 user = user + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
             }
         } catch (RepositoryException | LoginException e) {
-            //e.printStackTrace();
+            e.getStackTrace();
         }
         return user;
     }
