@@ -1,0 +1,9 @@
+{
+  "port-folio": {
+  "preimg": "/content/dam/ugams/preview.png",
+  "portfolioText": "vector",
+  "img": "/content/dam/ugams/p1.jpg",
+  "portfolioTitle": "2D Vinyl Design",
+  "sling:resourceType": "ugams/components/content/portfolio-teaser"
+}
+}

@@ -15,8 +15,6 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -26,7 +24,6 @@ import java.util.*;
         adapters = UserNames.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class UserNamesImpl implements UserNames {
-    //final Logger LOG = LoggerFactory.getLogger(UserNamesImpl.class);
 
     @SlingObject
     ResourceResolver resolver;
@@ -35,16 +32,9 @@ public class UserNamesImpl implements UserNames {
     @OSGiService
     ResourceResolverFactory resourceResolverFactory;
     String user = " ";
-    /*@PostConstruct
-    protected void init(){
-        LOG.info("\n printing Model logs");
-    }*/
-
+  
     @Override
     public String getUserNames() throws RepositoryException {
-
-        //LOG.info("\n Inside Getusername of service ");
-        List<String> usernames = new ArrayList<>();
         Map<String, String> userMap = new HashMap<>();
         userMap.put("p.hits", "selective");
         userMap.put("p.limit", "-1");
@@ -54,11 +44,8 @@ public class UserNamesImpl implements UserNames {
         userMap.put("type", "rep:User");
         userMap.put("p.properties", "rep:principalName");
         try{
-            //LOG.info("\n Inside Try..");
             ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
-            //LOG.info("\n resolver hit "+serviceResourceResolver.getUserID());
             Session session = serviceResourceResolver.adaptTo(Session.class);
-            //LOG.info("\n Result "+session.getUserID());
             Query userQuery = queryBuilder.createQuery(PredicateGroup.create(userMap), session);
             SearchResult result = userQuery.getResult();
             List<Hit> Hits = result.getHits();
@@ -66,7 +53,7 @@ public class UserNamesImpl implements UserNames {
                 user = user + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
             }
         } catch (RepositoryException | LoginException e) {
-            //LOG.info("Service User ERROR",e.getMessage());
+            e.getStackTrace();
         }
         return user;
     }

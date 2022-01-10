@@ -1,6 +1,5 @@
 package com.Ugams.core.models.impl;
 
-
 import com.Ugams.core.models.Services;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -14,14 +13,11 @@ import javax.inject.Inject;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ServicesImpl implements Services {
 
-    final protected static String RESOURCE_TYPE="ugams/components/content/services";
-
     @Inject
     String title;
 
     @Inject
     String text;
-
 
     @Override
     public String getServiceTitle() {

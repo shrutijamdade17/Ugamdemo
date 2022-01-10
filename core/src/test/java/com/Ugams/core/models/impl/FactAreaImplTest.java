@@ -1,6 +1,6 @@
 package com.Ugams.core.models.impl;
 
-import com.Ugams.core.models.Timeline;
+import com.Ugams.core.models.FactArea;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.Resource;
@@ -12,25 +12,20 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
-class TimelineImplTest {
+class FactAreaImplTest {
 
     private final AemContext aemContext = new AemContext();
 
-
-    private Timeline timeline;
-
-
-   @BeforeEach
+    @BeforeEach
     void setUp() {
-       aemContext.load().json("/timeline.json","/content");
+        aemContext.load().json("/factarea.json","/content");
     }
 
     @Test
-    void getTimelineDetails() {
+    void getFactAreaDetails() {
         Resource resource = aemContext.currentResource("/content");
-        Timeline timeline = resource.adaptTo(Timeline.class);
-        assertEquals("Session: 2010-11", timeline.getTimelineDetails().get(0).get("text1"));
-        assertEquals("Result: 3.78 (In the Scale of 4.00)", timeline.getTimelineDetails().get(0).get("text2"));
-        assertEquals("Masters in Graphics & Fine Arts", timeline.getTimelineDetails().get(0).get("title"));
+        FactArea factArea = resource.adaptTo(FactArea.class);
+        assertEquals("Projects Completed", factArea.getFactAreaDetails().get(0).get("factText"));
+        assertEquals("2536", factArea.getFactAreaDetails().get(0).get("factNumber"));
     }
 }

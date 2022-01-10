@@ -14,8 +14,7 @@ public class OSGIConfigImpl implements OSGIConfig {
     private boolean isService;
     private String[] countries;
     private String runModes;
-
-    @Activate
+  
     protected void activate(UgamOsgiConfig ugamOSGIConfig){
         serviceName=ugamOSGIConfig.serviceName();
         serviceID=ugamOSGIConfig.serviceID();
@@ -23,7 +22,6 @@ public class OSGIConfigImpl implements OSGIConfig {
         countries=ugamOSGIConfig.serviceCountry();
         runModes=ugamOSGIConfig.serviceRunMode();
     }
-
 
     @Override
     public String getServiceName() {

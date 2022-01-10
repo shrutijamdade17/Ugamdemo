@@ -18,7 +18,7 @@ import java.util.Calendar;
 @Component(service = CurrentDate.class,immediate = true)
 public class CurrentDateImpl implements  CurrentDate {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CurrentDateImpl.class);
+    //private static final Logger LOG = LoggerFactory.getLogger(CurrentDateImpl.class);
     @Reference
     ResourceResolverFactory resourceResolverFactory;
 
@@ -35,7 +35,7 @@ public class CurrentDateImpl implements  CurrentDate {
             session.save();
             session.logout();
         } catch (Exception e) {
-            LOG.info(e.getMessage());
+           // LOG.info(e.getMessage());
         }
     }
 }

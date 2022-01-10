@@ -1,0 +1,9 @@
+{
+  "blog" : {
+  "jcr:primaryType": "nt:unstructured",
+  "blogText": "So many of us are demotivated to achieve anything.",
+  "img": "/content/dam/ugams/b3.jpg",
+  "blogTitle": "DO DREAMS SERVE AS A PREMONITION",
+  "sling:resourceType": "ugams/components/content/blog-teaser"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title-text": {
+  "jcr:primaryType": "nt:unstructured",
+    "background": "true",
+  "bottomPadding": "false",
+  "text": "At about this time of year",
+  "title": "My Offered Services",
+  "sectionGap": "true",
+  "sling:resourceType": "ugams/components/content/title-text"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "banner-nav": {
+  "jcr:primaryType": "nt:unstructured",
+  "nav1": "Home",
+  "nav2": "About Me",
+  "title": "About Me",
+  "sling:resourceType": "ugams/components/content/banner-navigation",
+  "nav1Path": "/content/ugams/us/en/home",
+    "nav2Path": "/content/ugams/us/en/home"
+  }
+}
