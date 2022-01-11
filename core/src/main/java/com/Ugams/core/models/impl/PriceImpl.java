@@ -1,6 +1,6 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.Price;
+import com.ugams.core.models.Price;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -13,7 +13,7 @@ import javax.inject.Inject;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class PriceImpl implements Price{
 
-    final protected static String RESOURCE_TYPE="ugams/components/content/price";
+    protected static final String RESOURCE_TYPE="ugams/components/content/price";
 
     @Inject
     String type;

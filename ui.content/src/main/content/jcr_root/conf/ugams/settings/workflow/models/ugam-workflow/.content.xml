@@ -7,7 +7,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/libs/cq/workflow/templates/model"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Ugam-Workflow"
+        jcr:title="ugam-Workflow"
         sling:resourceType="cq/workflow/components/pages/model">
         <flow
             jcr:primaryType="nt:unstructured"
@@ -22,7 +22,7 @@
                 sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    PROCESS="com.Ugams.core.workflow.CustomWorkflow"
+                    PROCESS="com.ugams.core.workflow.CustomWorkflow"
                     PROCESS_ARGS="User1:Shruti"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process>
@@ -50,7 +50,7 @@
                 sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    PROCESS="com.Ugams.core.workflow.CustomWorkflow"
+                    PROCESS="com.ugams.core.workflow.CustomWorkflow"
                     PROCESS_ARGS="User2:Sumedh"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process_318266403>

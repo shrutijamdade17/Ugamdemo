@@ -1,14 +1,9 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.Testimonial;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.ugams.core.models.Testimonial;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Exporter;
-import org.apache.sling.models.annotations.ExporterOption;
 import org.apache.sling.models.annotations.Model;
-
 import javax.inject.Inject;
 
 @Model(adaptables = Resource.class,
@@ -18,7 +13,7 @@ import javax.inject.Inject;
 
 public class TestimonialImpl implements Testimonial{
 
-    final protected static String RESOURCE_TYPE="ugams/components/content/testimonial";
+    protected static final String RESOURCE_TYPE="ugams/components/content/testimonial";
 
     @Inject
     String name;

@@ -1,6 +1,6 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.TestimonialMulti;
+import com.ugams.core.models.TestimonialMulti;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class TestimonialMultiImpl implements TestimonialMulti{
 
-    final protected static String RESOURCE_TYPE="ugams/components/content/testimonial-multi";
+    protected static final String RESOURCE_TYPE="ugams/components/content/testimonial-multi";
 
     @ChildResource
     Resource testimonialmultifield;

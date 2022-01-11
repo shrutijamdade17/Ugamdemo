@@ -3,5 +3,5 @@
     jcr:primaryType="sling:Folder">
     <jcr:content
         jcr:primaryType="nt:unstructured"
-        jcr:title="Ugam-CF"/>
+        jcr:title="ugam-CF"/>
 </jcr:root>

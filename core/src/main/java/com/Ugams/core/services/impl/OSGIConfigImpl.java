@@ -1,8 +1,7 @@
-package com.Ugams.core.services.impl;
+package com.ugams.core.services.impl;
 
-import com.Ugams.core.config.UgamOsgiConfig;
-import com.Ugams.core.services.OSGIConfig;
-import org.osgi.service.component.annotations.Activate;
+import com.ugams.core.config.UgamOsgiConfig;
+import com.ugams.core.services.OSGIConfig;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.Designate;
 
@@ -15,7 +14,7 @@ public class OSGIConfigImpl implements OSGIConfig {
     private String[] countries;
     private String runModes;
   
-    protected void activate(UgamOsgiConfig ugamOSGIConfig){
+    public void activate(UgamOsgiConfig ugamOSGIConfig){
         serviceName=ugamOSGIConfig.serviceName();
         serviceID=ugamOSGIConfig.serviceID();
         isService=ugamOSGIConfig.isService();

@@ -1,4 +1,4 @@
-package com.Ugams.core.config;
+package com.ugams.core.config;
 
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.AttributeType;

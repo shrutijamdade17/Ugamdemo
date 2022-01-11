@@ -9,7 +9,7 @@
         cq:scaffolding="/conf/ugams/settings/dam/cfm/models/content-fragment-ugam/jcr:content/model"
         cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Content-Fragment-Ugam"
+        jcr:title="Content-Fragment-ugam"
         sling:resourceSuperType="dam/cfm/models/console/components/data/entity"
         sling:resourceType="dam/cfm/models/console/components/data/entity/default">
         <model

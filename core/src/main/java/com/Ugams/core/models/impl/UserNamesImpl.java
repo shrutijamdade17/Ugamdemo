@@ -1,7 +1,7 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.UserNames;
-import com.Ugams.core.utils.ResolverUtils;
+import com.ugams.core.models.UserNames;
+import com.ugams.core.utils.ResolverUtils;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -43,14 +43,13 @@ public class UserNamesImpl implements UserNames {
         userMap.put("path", "/home/users");
         userMap.put("type", "rep:User");
         userMap.put("p.properties", "rep:principalName");
-        try{
-            ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
+        try(ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory)){
             Session session = serviceResourceResolver.adaptTo(Session.class);
             Query userQuery = queryBuilder.createQuery(PredicateGroup.create(userMap), session);
             SearchResult result = userQuery.getResult();
-            List<Hit> Hits = result.getHits();
-            for (Hit hit : Hits) {
-                user = user + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
+            List<Hit> hits = result.getHits();
+            for (Hit hit : hits) {
+                user = user.concat("\r\n").concat(hit.getProperties().get("rep:principalName", String.class));
             }
         } catch (RepositoryException | LoginException e) {
             e.getStackTrace();

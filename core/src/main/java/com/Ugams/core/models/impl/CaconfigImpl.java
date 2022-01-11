@@ -1,7 +1,7 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.config.Ugam1CAConfig;
-import com.Ugams.core.models.Caconfig;
+import com.ugams.core.config.Ugam1CAConfig;
+import com.ugams.core.models.Caconfig;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
