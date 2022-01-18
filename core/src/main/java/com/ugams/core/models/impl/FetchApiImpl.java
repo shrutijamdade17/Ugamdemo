@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +32,7 @@ public class FetchApiImpl implements FetchApi {
     public String userid;
 
     @Override
-    public List<Map<String, String>> getMessage() throws IOException, JSONException {
+    public List<Map<String, String>> getMessage() throws IOException {
         String message = Network.readJson("https://reqres.in/api/users/"+userid);
         ObjectMapper mapper = new ObjectMapper();
         log.info("objectmapper"+String.valueOf(mapper));
@@ -42,6 +44,7 @@ public class FetchApiImpl implements FetchApi {
         JsonNode last_name = child.get("last_name");
         String email =emailId.asText();
         String imagePath = avatar.asText();
+        String imgPath = imagePath.replaceAll("https://reqres.in/img/faces/","/content/dam/ugams/");
         String firstName = first_name.asText();
         String lastName = last_name.asText();
         List<Map<String, String>> userdata = new ArrayList<>();
@@ -49,7 +52,8 @@ public class FetchApiImpl implements FetchApi {
         tMap.put("email",email);
         tMap.put("firstName",firstName);
         tMap.put("lastName",lastName);
-        tMap.put("imagePath",imagePath);
+        tMap.put("imagePath",imgPath);
+        log.info("image path"+imgPath);
         userdata.add(tMap);
         log.info("list"+userdata);
         return userdata;
