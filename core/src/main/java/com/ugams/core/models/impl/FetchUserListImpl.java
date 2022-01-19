@@ -1,16 +1,20 @@
 package com.ugams.core.models.impl;
 
 import com.ugams.core.models.FetchUserList;
+import com.ugams.core.services.FetchUserService;
+import com.ugams.core.utils.FetchData;
 import com.ugams.core.utils.Network;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,11 +30,15 @@ public class FetchUserListImpl implements FetchUserList {
     @Inject
     String pageno;
 
+    @OSGiService
+    FetchUserService fetchUserService;
+
     @Override
-    public List<Map<String, String>> getData() throws JSONException {
-        String message = Network.readJson("https://reqres.in/api/users?page="+pageno);
+    public List<Map<String, String>> getData() throws JSONException, MalformedURLException {
+        String multiurl = fetchUserService.getUserList()+pageno;
+        String message = FetchData.getFetchData(multiurl);
         JSONObject jsonObject =  new JSONObject(message);
-        log.info(String.valueOf(jsonObject));
+        log.info("============================List of users"+String.valueOf(jsonObject));
         JSONArray jsonArray1 = jsonObject.getJSONArray("data");
         List<Map<String, String>> userList = new ArrayList<>();
         for (int i=0;i<jsonArray1.length();i++){

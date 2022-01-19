@@ -3,11 +3,15 @@ package com.ugams.core.models.impl;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ugams.core.models.FetchApi;
+import com.ugams.core.services.FetchUserService;
+import com.ugams.core.utils.FetchData;
 import com.ugams.core.utils.Network;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.json.JSONException;
+import com.ugams.core.utils.FetchData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,9 +35,16 @@ public class FetchApiImpl implements FetchApi {
     @Inject
     public String userid;
 
+
+    @OSGiService
+    FetchUserService fetchUserService;
+
     @Override
-    public List<Map<String, String>> getMessage() throws IOException {
-        String message = Network.readJson("https://reqres.in/api/users/"+userid);
+    public List<Map<String, String>> getMessage() throws IOException, URISyntaxException {
+        String singleurl = fetchUserService.getSingleUser()+userid;
+        log.info("Inside FetchApi Impl"+singleurl);
+        String message = FetchData.getFetchData(singleurl);
+        log.info("Response From Conn"+message);
         ObjectMapper mapper = new ObjectMapper();
         log.info("objectmapper"+String.valueOf(mapper));
         JsonNode node = mapper.readValue(message, JsonNode.class);
@@ -44,7 +55,10 @@ public class FetchApiImpl implements FetchApi {
         JsonNode last_name = child.get("last_name");
         String email =emailId.asText();
         String imagePath = avatar.asText();
-        String imgPath = imagePath.replaceAll("https://reqres.in/img/faces/","/content/dam/ugams/");
+        URI uri = new URI(imagePath);
+        String path = uri.getPath();
+        String idstr = path.substring(path.lastIndexOf("/")+1);
+        String imgPath = "/content/dam/ugams/"+idstr;
         String firstName = first_name.asText();
         String lastName = last_name.asText();
         List<Map<String, String>> userdata = new ArrayList<>();
@@ -53,7 +67,6 @@ public class FetchApiImpl implements FetchApi {
         tMap.put("firstName",firstName);
         tMap.put("lastName",lastName);
         tMap.put("imagePath",imgPath);
-        log.info("image path"+imgPath);
         userdata.add(tMap);
         log.info("list"+userdata);
         return userdata;
