@@ -1,0 +1,11 @@
+<sly class="container bg-white" data-sly-use.user="com.ugams.core.models.FetchApi"></sly>
+<h3 hidden>${user.userid}</h3>
+<h3 hidden>${user.message}</h3>
+<div class="column cardlist-container" data-sly-list.items="${user.message}">
+<img src="${items.imagePath}"/>
+<div>
+<span>${items.firstName}</span>
+<span>${items.lastName}</span>
+</div>
+<p style="text-align: center;" id="demo3">${items.email}</p>
+</div>
