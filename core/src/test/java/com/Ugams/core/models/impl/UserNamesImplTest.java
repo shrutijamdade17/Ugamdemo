@@ -1,6 +1,6 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.UserNames;
+import com.ugams.core.models.UserNames;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -18,7 +18,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,15 +28,14 @@ import static org.mockito.Mockito.mock;
 class UserNamesImplTest {
 
     private final AemContext aemContext = new AemContext(ResourceResolverType.JCR_MOCK);
+
     @BeforeEach
     void setUp() {
         aemContext.addModelsForClasses(UserNames.class);
-        aemContext.load().json("/userlist.json","/home");
-    }
+        aemContext.load().json("/userlist.json","/home");    }
 
     @Test
     void getUserNames() throws RepositoryException, NoSuchFieldException {
-
         UserNames userNames = aemContext.request().adaptTo(UserNames.class);
         final List<Hit> results = new ArrayList<>();
         Hit UserResult1 = mock(Hit.class);
@@ -52,5 +50,5 @@ class UserNamesImplTest {
         Mockito.when(SearchResult.getHits()).thenReturn(results);
         assertEquals(" "+"\r\nugamuser",userNames.getUserNames());
     }
-}
 
+}

@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.Ugams.core.filters;
+package com.ugams.core.filters;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -58,12 +58,13 @@ public class LoggingFilter implements Filter {
         filterChain.doFilter(request, response);
     }
 
-    @Override
+   @Override
     public void init(FilterConfig filterConfig) {
+        //
     }
 
     @Override
     public void destroy() {
-    }
-
+        //
+   }
 }

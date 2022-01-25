@@ -1,4 +1,4 @@
-package com.Ugams.core.workflow;
+package com.ugams.core.workflow;
 
 import com.adobe.granite.workflow.exec.WorkflowData;
 import org.osgi.service.component.annotations.Component;
@@ -12,7 +12,7 @@ import javax.jcr.Session;
 
 @Component(
         service = WorkflowProcess.class,
-        property = {"process.label" + " = Ugams Workflow Step"}
+        property = {"process.label" + " = ugams Workflow Step"}
 )
 public class CustomWorkflow implements WorkflowProcess{
     @Override
@@ -23,7 +23,7 @@ public class CustomWorkflow implements WorkflowProcess{
                 Session session = workflowSession.adaptTo(Session.class);
                 String payloadpath = workflowData.getPayload().toString() + "/jcr:content";
                 Node node = (Node) session.getItem(payloadpath);
-                String[] process = metaDataMap.get("PROCESS_ARGS","string").toString().split(",");
+                String[] process = metaDataMap.get("PROCESS_ARGS","string").split(",");
                 for (String pro : process) {
                     String [] arg=pro.split(":");
                     String property=arg[0];

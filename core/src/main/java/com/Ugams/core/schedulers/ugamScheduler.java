@@ -1,18 +1,15 @@
-package com.Ugams.core.schedulers;
+package com.ugams.core.schedulers;
 
-import com.Ugams.core.config.SchedulerConfig;
-import com.Ugams.core.services.CurrentDate;
-import org.apache.sling.api.resource.*;
+import com.ugams.core.config.SchedulerConfig;
+import com.ugams.core.services.CurrentDate;
 import org.apache.sling.commons.scheduler.ScheduleOptions;
 import org.apache.sling.commons.scheduler.Scheduler;
 import org.osgi.service.component.annotations.*;
 import org.osgi.service.metatype.annotations.Designate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-@Component(immediate = true, service = ugamScheduler.class)
+@Component(immediate = true, service = UgamScheduler.class)
 @Designate(ocd = SchedulerConfig.class)
-public class ugamScheduler implements Runnable {
+public class UgamScheduler implements Runnable {
   
     private int schedulerId;
 
@@ -21,12 +18,6 @@ public class ugamScheduler implements Runnable {
 
     @Reference
     private Scheduler scheduler;
-
-    private ResourceResolverFactory resolverFactory;
-
-    private String eventDate;
-
-    String path = "/content/ugams/us/en/demo/jcr:content/root/container/currenttime";
 
     @Activate
     protected void activate(SchedulerConfig config) {
@@ -52,7 +43,7 @@ public class ugamScheduler implements Runnable {
   
     @Override
     public void run() {
-        currentDate.UpdateDate(path);
+        currentDate.updateDate("/content/ugams/us/en/demo/jcr:content/root/container/currenttime");
       }
     }
 

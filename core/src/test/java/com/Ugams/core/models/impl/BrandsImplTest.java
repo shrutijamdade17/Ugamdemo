@@ -1,7 +1,7 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.Blog;
-import com.Ugams.core.models.Brands;
+import com.ugams.core.models.Blog;
+import com.ugams.core.models.Brands;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.Resource;

@@ -1,7 +1,7 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.BannerArea;
-import com.Ugams.core.models.TitleText;
+import com.ugams.core.models.BannerArea;
+import com.ugams.core.models.TitleText;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.poi.ss.formula.functions.T;

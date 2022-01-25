@@ -3,5 +3,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Teaser"
     sling:resourceSuperType="core/wcm/components/teaser/v1/teaser"
-    componentGroup="Ugams - Content"
     imageDelegate="ugams/components/image"/>
+    componentGroup="ugams - Content"
