@@ -6,6 +6,6 @@
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/ugams/settings/wcm/template-types/xf"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Ugam xf"
+        jcr:title="ugam xf"
         status="enabled"/>
 </jcr:root>

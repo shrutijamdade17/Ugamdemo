@@ -5,7 +5,7 @@
     jcr:uuid="2b11904f-bfd7-4ec7-901e-8e41fd230887"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Ugam">
+    title="ugam">
     <metaData
         cq:generatingPage="/conf/global/settings/workflow/models/ugam/jcr:content"
         cq:lastModified="{Long}1638797761508"

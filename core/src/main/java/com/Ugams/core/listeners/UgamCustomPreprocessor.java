@@ -1,7 +1,7 @@
-package com.Ugams.core.listeners;
+package com.ugams.core.listeners;
 
-import com.Ugams.core.services.CurrentDate;
-import com.Ugams.core.utils.ResolverUtils;
+import com.ugams.core.services.CurrentDate;
+import com.ugams.core.utils.ResolverUtils;
 import com.day.cq.commons.date.DateUtil;
 import com.day.cq.commons.date.InvalidDateException;
 import com.day.cq.replication.*;
@@ -11,8 +11,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -23,7 +21,6 @@ import java.util.Calendar;
 public class UgamCustomPreprocessor implements Preprocessor {
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
-    String path1 = "/content/ugams/us/en/demo/jcr:content/root/container/currenttime";
 
     @Reference
     CurrentDate currentTime;
@@ -37,15 +34,13 @@ public class UgamCustomPreprocessor implements Preprocessor {
         }
         String path = replicationAction.getPath();
         if(path.equals("/content/ugams/us/en/demo")){
-            ResourceResolver serviceResourceResolver = null;
-            try {
-                serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
+            try(ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory)) {
                 Session session = serviceResourceResolver.adaptTo(Session.class);
-                Resource resource = serviceResourceResolver.getResource(path1);
+                Resource resource = serviceResourceResolver.getResource("/content/ugams/us/en/demo/jcr:content/root/container/currenttime");
                 Node node = resource.adaptTo(Node.class);
                 if(node.getProperty("time") != DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())))
                 {
-                    currentTime.UpdateDate(path1);
+                    currentTime.updateDate("/content/ugams/us/en/demo/jcr:content/root/container/currenttime");
                     session.save();
                     session.logout();
                 }

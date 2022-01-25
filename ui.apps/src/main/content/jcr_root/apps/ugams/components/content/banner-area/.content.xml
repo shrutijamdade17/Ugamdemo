@@ -6,4 +6,4 @@
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="cq:Component"
     jcr:title="Banner Area"
-    componentGroup="Ugams - Content"/>
+    componentGroup="ugams - Content"/>

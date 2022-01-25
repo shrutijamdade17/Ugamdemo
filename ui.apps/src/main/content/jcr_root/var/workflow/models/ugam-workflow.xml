@@ -5,7 +5,7 @@
     jcr:uuid="75213c8e-a5c2-4c3a-a7f6-43b2938694d1"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Ugam-Workflow">
+    title="ugam-Workflow">
     <metaData
         cq:generatingPage="/conf/global/settings/workflow/models/ugam-workflow/jcr:content"
         cq:lastModified="{Long}1638897638427"
@@ -24,7 +24,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.Ugams.core.workflow.CustomWorkflow"
+                PROCESS="com.ugams.core.workflow.CustomWorkflow"
                 PROCESS_ARGS="User1:Shruti"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
@@ -44,7 +44,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.Ugams.core.workflow.CustomWorkflow"
+                PROCESS="com.ugams.core.workflow.CustomWorkflow"
                 PROCESS_ARGS="User2:Sumedh"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node3>

@@ -1,8 +1,8 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.config.UgamOsgiConfig;
-import com.Ugams.core.models.OSGiConfigModel;
-import com.Ugams.core.services.impl.OSGIConfigImpl;
+import com.ugams.core.config.UgamOsgiConfig;
+import com.ugams.core.models.OSGiConfigModel;
+import com.ugams.core.services.impl.OSGIConfigImpl;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeEach;

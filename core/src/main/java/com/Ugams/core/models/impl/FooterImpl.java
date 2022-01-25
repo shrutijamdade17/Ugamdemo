@@ -1,6 +1,6 @@
-package com.Ugams.core.models.impl;
+package com.ugams.core.models.impl;
 
-import com.Ugams.core.models.Footer;
+import com.ugams.core.models.Footer;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -13,7 +13,7 @@ import javax.inject.Inject;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class FooterImpl implements Footer{
 
-    final protected static String RESOURCE_TYPE="ugams/components/content/footer";
+    protected static final String RESOURCE_TYPE="ugams/components/content/footer";
 
     @Inject
     String title1;
