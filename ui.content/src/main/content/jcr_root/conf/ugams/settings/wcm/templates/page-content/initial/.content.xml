@@ -23,6 +23,12 @@
                     sling:resourceType="ugams/components/container"
                     layout="responsiveGrid"/>
             </container>
+            <experiencefragment-header
+                jcr:lastModified="{Date}2021-12-03T14:57:40.884+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ugams/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/ugams/us/en/site/header/master"/>
         </root>
     </jcr:content>
 </jcr:root>
